@@ -17,6 +17,10 @@ const productSchema = mongoose.Schema({
     pimage: String
 });
 
+const rashiSchema =mongoose.Schema({
+    
+})
+
 const userSchema = mongoose.Schema({
     uid: Number,
     username: String,
