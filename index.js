@@ -59,9 +59,9 @@ app.post("/user", async (req, res) => {
            
         } else {
                 const newUser = new User({
-                    uid: req.body.uid,
+                    umessage: req.body.umessage,
                     username: req.body.username,
-                    email:req.body.email
+                    unumber:req.body.unumber
                 });
                  newUser.save()
                 res.send("File Uploaded")

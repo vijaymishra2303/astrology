@@ -22,9 +22,10 @@ const rashiSchema =mongoose.Schema({
 })
 
 const userSchema = mongoose.Schema({
-    uid: Number,
+
     username: String,
-    email: String
+    unumber:Number,
+    umessage:String
 });
 
 const Product = mongoose.model("Product", productSchema);
