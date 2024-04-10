@@ -64,7 +64,7 @@ app.post("/user", async (req, res) => {
                     unumber:req.body.unumber
                 });
                  newUser.save()
-                res.send("File Uploaded")
+                res.send("File Uploaded ")
             
         }
     });
