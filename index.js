@@ -94,6 +94,9 @@ app.post("/rashi",async(req,res)=>{
         }
     })
 })
-
+app.get("/rashi",async(req,resp)=>{
+    const rashis=await Rashi.find()
+    resp.send(rashis)
+})
 
 app.listen(4000)
