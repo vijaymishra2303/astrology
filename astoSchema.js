@@ -17,9 +17,7 @@ const productSchema = mongoose.Schema({
     pimage: String
 });
 
-const rashiSchema =mongoose.Schema({
-    
-})
+
 
 const userSchema = mongoose.Schema({
 
@@ -28,7 +26,18 @@ const userSchema = mongoose.Schema({
     umessage:String
 });
 
+
+const rashiSchema =mongoose.Schema({
+     rid:Number,
+     rname:String,
+     rdesc:String,
+     rimage:String
+
+
+    
+})
 const Product = mongoose.model("Product", productSchema);
 const User = mongoose.model("User", userSchema);
+const Rashi =mongoose.model("Rashi", rashiSchema )
 
-module.exports = { Product, User };
+module.exports = { Product, User ,Rashi };

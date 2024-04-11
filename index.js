@@ -4,7 +4,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const multer = require("multer");
-const { Product, User } = require("./astoSchema"); // Importing models
+const { Product, User ,Rashi } = require("./astoSchema"); // Importing models
 
 app.use(cors());
 app.use(express.json());
@@ -70,14 +70,30 @@ app.post("/user", async (req, res) => {
     });
 });
 
-
-
 app.get("/user",async (req,resp)=>{
     const users=await User.find()
     resp.send(users)
 })
 
 
+const uploadr = multer({ storage: storage }).single("rimage");
+app.post("/rashi",async(req,res)=>{
+    uploadr(req, res, async(err)=>{
+        if(err){
+            console.log(err);
+        }else{
+            const newRashi= new Rashi({
+                rid:req.body.rid,
+                rname:req.body.rname,
+                rdesc:req.body.rdesc,
+                rimage: "http://localhost:4000/uploads/" + req.file.filename,
+
+            });
+            newRashi.save();
+            res.send("File Uploaded")
+        }
+    })
+})
 
 
 app.listen(4000)
