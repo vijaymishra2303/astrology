@@ -25,8 +25,8 @@ const storage = multer.diskStorage({
 const upload = multer({ storage:storage }).single("pimage");
 
 // POST method for creating a new product
-app.post("/product", async (req, res) => {
-    upload(req, res, async (err) => {
+app.post("/product",  (req, res) => {
+    upload(req, res,  (err) => {
         if (err) {
             console.log(err);
            
@@ -54,8 +54,8 @@ app.get("/product",async (req,resp)=>{
 
 
 //user collection
-app.post("/user", async (req, res) => {
-    upload(req, res, async (err) => {
+app.post("/user",  (req, res) => {
+    upload(req, res,  (err) => {
         if (err) {
             console.log(err);
            
@@ -79,8 +79,8 @@ app.get("/user",async (req,resp)=>{
 
 
 const uploadr = multer({ storage: storage }).single("rimage");
-app.post("/rashi",async(req,res)=>{
-    uploadr(req, res, async(err)=>{
+app.post("/rashi",(req,res)=>{
+    uploadr(req, res, (err)=>{
         if(err){
             console.log(err);
         }else{
@@ -92,7 +92,7 @@ app.post("/rashi",async(req,res)=>{
 
             });
             newRashi.save();
-            res.send("File Uploaded")
+            res.send("File Uploaded Succesfully")
         }
     })
 })
