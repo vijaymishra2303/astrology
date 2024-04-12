@@ -1,18 +1,20 @@
 
 require("./mongoose")
+const { Product, User ,Rashi } = require("./astoSchema");// Importing models
 const express = require("express");
 const app = express();
-const cors = require("cors");
 const multer = require("multer");
-const { Product, User ,Rashi } = require("./astoSchema"); // Importing models
+const cors = require("cors");
+
+ 
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static("public"));
+app.use(express.static("public"))
 
 // Multer configuration for file upload
 const storage = multer.diskStorage({
-    destination: (req, resp, cb) => {
+    destination: (req, res, cb) => {
         cb(null, "public/uploads/");
     },
     filename: (req, file, cb) => {
@@ -20,7 +22,7 @@ const storage = multer.diskStorage({
     }
 });
 
-const upload = multer({ storage: storage }).single("pimage");
+const upload = multer({ storage:storage }).single("pimage");
 
 // POST method for creating a new product
 app.post("/product", async (req, res) => {
