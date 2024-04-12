@@ -87,7 +87,8 @@ app.post("/rashi",(req,res)=>{
                 rid:req.body.rid,
                 rname:req.body.rname,
                 rdesc:req.body.rdesc,
-                rimage: "http://localhost:4000/uploads/" + req.file.filename,
+                // rimage: "http://localhost:4000/uploads/" + req.file.filename
+                rimage: "/uploads/" + req.file.filename
 
             });
             newRashi.save();
