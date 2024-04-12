@@ -35,7 +35,7 @@ app.post("/product",  (req, res) => {
                     pid: req.body.pid,
                     pname: req.body.pname,
                     pdesc:req.body.pdesc,
-                    pimage: "http://localhost:4000/uploads/" + req.file.filename
+                    pimage: "http://localhost:4000/uploads/"+req.file.filename
                 });
                  newProduct.save();
                 res.send("File Uploaded")
