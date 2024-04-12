@@ -12,7 +12,7 @@ app.use(express.static("public"));
 
 // Multer configuration for file upload
 const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
+    destination: (req, resp, cb) => {
         cb(null, "public/uploads/");
     },
     filename: (req, file, cb) => {
