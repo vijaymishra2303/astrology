@@ -33,8 +33,8 @@ app.post("/product",  (req, res) => {
                     pid: req.body.pid,
                     pname: req.body.pname,
                     pdesc:req.body.pdesc,
-                    // pimage: "http://localhost:4000/uploads/"+req.file.filename
-                    pimage: "/uploads/"+req.file.filename
+                     pimage: "http://localhost:4000/uploads/"+req.file.filename
+                    
                 });
                  newProduct.save();
                 res.send("File Uploaded")
@@ -87,8 +87,7 @@ app.post("/rashi",(req,res)=>{
                 rid:req.body.rid,
                 rname:req.body.rname,
                 rdesc:req.body.rdesc,
-                // rimage: "http://localhost:4000/uploads/" + req.file.filename
-                rimage: "/uploads/" + req.file.filename
+                rimage: "http://localhost:4000/uploads/" + req.file.filename
 
             });
             newRashi.save();
